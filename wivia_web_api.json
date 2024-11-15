@@ -88,7 +88,7 @@
     }
   ],
   "paths": {
-    "/station/quickJoin": {
+    "/api/v2/station/quickJoin": {
       "get": {
         "tags": [
           "BeforeLogin"
@@ -133,7 +133,7 @@
         }
       }
     },
-    "/station/general/logincode": {
+    "/api/v2/station/general/logincode": {
       "get": {
         "tags": [
           "BeforeLogin"
@@ -141,12 +141,13 @@
         "description": "Obtain the login code",
         "parameters": [
           {
-            "in": "query",
             "name": "username",
-            "example": "frontend",
+            "in": "query",
             "required": true,
+            "description": "Use 'frontend'",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "frontend"
             }
           }
         ],
@@ -214,7 +215,7 @@
         }
       }
     },
-    "/station/model": {
+    "/api/v2/station/model": {
       "get": {
         "tags": [
           "BeforeLogin"
@@ -284,7 +285,7 @@
         }
       }
     },
-    "/station/login": {
+    "/api/v2/station/login": {
       "post": {
         "tags": [
           "Login"
@@ -324,7 +325,7 @@
         }
       }
     },
-    "/station/reboot": {
+    "/api/v2/station/reboot": {
       "post": {
         "tags": [
           "Reboot"
@@ -336,6 +337,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -377,7 +381,7 @@
         }
       }
     },
-    "/station/upload": {
+    "/api/v2/station/upload": {
       "post": {
         "tags": [
           "Upload"
@@ -389,6 +393,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           },
@@ -464,7 +471,7 @@
         }
       }
     },
-    "/station/general": {
+    "/api/v2/station/general": {
       "get": {
         "tags": [
           "General"
@@ -476,6 +483,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -544,6 +554,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -575,7 +588,7 @@
         }
       }
     },
-    "/station/general/wallpaper/list": {
+    "/api/v2/station/general/wallpaper/list": {
       "get": {
         "tags": [
           "General"
@@ -587,6 +600,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -636,7 +652,7 @@
         }
       }
     },
-    "/station/general/wallpaper/{id}": {
+    "/api/v2/station/general/wallpaper/{id}": {
       "delete": {
         "tags": [
           "General"
@@ -648,6 +664,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/idParameter"
           },
@@ -685,7 +704,7 @@
         }
       }
     },
-    "/station/resolution": {
+    "/api/v2/station/resolution": {
       "get": {
         "tags": [
           "Video Output"
@@ -697,6 +716,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -818,6 +840,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -867,7 +892,7 @@
         }
       }
     },
-    "/station/resolution/list": {
+    "/api/v2/station/resolution/list": {
       "get": {
         "tags": [
           "Video Output"
@@ -879,6 +904,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -931,7 +959,7 @@
         }
       }
     },
-    "/station/time": {
+    "/api/v2/station/time": {
       "get": {
         "tags": [
           "DateTime"
@@ -943,6 +971,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1031,6 +1062,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -1062,7 +1096,7 @@
         }
       }
     },
-    "/station/wifi": {
+    "/api/v2/station/wifi": {
       "get": {
         "tags": [
           "Wi-Fi"
@@ -1074,6 +1108,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1180,6 +1217,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -1248,7 +1288,7 @@
         }
       }
     },
-    "/station/wifi/list": {
+    "/api/v2/station/wifi/list": {
       "get": {
         "tags": [
           "Wi-Fi"
@@ -1260,6 +1300,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1343,7 +1386,7 @@
         }
       }
     },
-    "/station/wifi/connection": {
+    "/api/v2/station/wifi/connection": {
       "get": {
         "tags": [
           "Wi-Fi"
@@ -1355,6 +1398,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1488,6 +1534,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -1529,6 +1578,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1588,14 +1640,10 @@
         ],
         "parameters": [
           {
-            "name": "ssid",
-            "example": "Astrogate_5G",
-            "in": "query",
-            "required": true,
-            "description": "Use ssid name",
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
+            "$ref": "#/components/parameters/ssidParameter"
           },
           {
             "$ref": "#/components/parameters/userParameter"
@@ -1620,7 +1668,7 @@
         }
       }
     },
-    "/station/wifi/saved/list": {
+    "/api/v2/station/wifi/saved/list": {
       "get": {
         "tags": [
           "Wi-Fi"
@@ -1632,6 +1680,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1732,7 +1783,7 @@
         }
       }
     },
-    "/station/wifi/saved/ap": {
+    "/api/v2/station/wifi/saved/ap": {
       "get": {
         "tags": [
           "Wi-Fi"
@@ -1745,7 +1796,23 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
+          },
+          {
+            "$ref": "#/components/parameters/ssidParameter"
+          },
+          {
+            "name": "security",
+            "example": "None",
+            "in": "query",
+            "required": true,
+            "description": "Use security value",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1809,7 +1876,13 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
+          },
+          {
+            "$ref": "#/components/parameters/ssidParameter"
           }
         ],
         "requestBody": {
@@ -1868,14 +1941,10 @@
         ],
         "parameters": [
           {
-            "name": "ssid",
-            "example": "Astrogate_5G",
-            "in": "query",
-            "required": true,
-            "description": "Use ssid name",
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
+            "$ref": "#/components/parameters/ssidParameter"
           },
           {
             "$ref": "#/components/parameters/userParameter"
@@ -1900,7 +1969,7 @@
         }
       }
     },
-    "/station/ethernet": {
+    "/api/v2/station/ethernet": {
       "get": {
         "tags": [
           "Ethernet"
@@ -1912,6 +1981,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -1999,6 +2071,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -2049,7 +2124,7 @@
         }
       }
     },
-    "/station/firmware": {
+    "/api/v2/station/firmware": {
       "get": {
         "tags": [
           "Update"
@@ -2061,6 +2136,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           },
@@ -2173,6 +2251,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           },
           {
@@ -2214,7 +2295,7 @@
         }
       }
     },
-    "/station/firmware/download/start": {
+    "/api/v2/station/firmware/download/start": {
       "put": {
         "tags": [
           "Update"
@@ -2226,6 +2307,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2315,7 +2399,7 @@
         }
       }
     },
-    "/station/firmware/download/stop": {
+    "/api/v2/station/firmware/download/stop": {
       "put": {
         "tags": [
           "Update"
@@ -2327,6 +2411,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2361,7 +2448,7 @@
         }
       }
     },
-    "/station/ota/check": {
+    "/api/v2/station/ota/check": {
       "get": {
         "tags": [
           "Update"
@@ -2373,6 +2460,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2406,7 +2496,7 @@
         }
       }
     },
-    "/station/admin/password": {
+    "/api/v2/station/admin/password": {
       "put": {
         "tags": [
           "Password"
@@ -2418,6 +2508,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2522,7 +2615,7 @@
         }
       }
     },
-    "/station/service": {
+    "/api/v2/station/service": {
       "get": {
         "tags": [
           "Mirroring Protocols"
@@ -2534,6 +2627,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2594,6 +2690,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -2632,7 +2731,7 @@
         }
       }
     },
-    "/station/system/reset": {
+    "/api/v2/station/system/reset": {
       "post": {
         "tags": [
           "System"
@@ -2644,6 +2743,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2674,7 +2776,7 @@
         }
       }
     },
-    "/station/system/log/switch": {
+    "/api/v2/station/system/log/switch": {
       "get": {
         "tags": [
           "System"
@@ -2686,6 +2788,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2747,6 +2852,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -2788,7 +2896,7 @@
         }
       }
     },
-    "/station/system/log": {
+    "/api/v2/station/system/log": {
       "get": {
         "tags": [
           "System"
@@ -2800,6 +2908,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2898,6 +3009,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -2920,7 +3034,7 @@
         }
       }
     },
-    "/station/system/config": {
+    "/api/v2/station/system/config": {
       "get": {
         "tags": [
           "System"
@@ -2932,6 +3046,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -2972,6 +3089,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -3017,7 +3137,7 @@
         }
       }
     },
-    "/station/power/setting": {
+    "/api/v2/station/power/setting": {
       "get": {
         "tags": [
           "Power"
@@ -3029,6 +3149,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -3097,6 +3220,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
+          {
             "$ref": "#/components/parameters/userParameter"
           }
         ],
@@ -3143,12 +3269,17 @@
         }
       }
     },
-    "/station/remote/apikey": {
+    "/api/v2/station/remote/apikey": {
       "get": {
         "tags": [
           "Remote Access"
         ],
         "description": "Retrieve API token",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -3200,6 +3331,9 @@
         ],
         "description": "Update API token",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyParameter"
+          },
           {
             "$ref": "#/components/parameters/userParameter"
           }
@@ -4040,11 +4174,31 @@
       }
     },
     "parameters": {
+      "ApiKeyParameter": {
+        "name": "X-API-KEY",
+        "in": "header",
+        "required": true,
+        "description": "API Key for authenticating requests",
+        "schema": {
+          "type": "string",
+          "example": "K0ovDyWZtui7B72s"
+        }
+      },
       "userParameter": {
         "name": "username",
-        "example": "admin",
         "in": "query",
         "required": true,
+        "description": "Use 'admin'",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ssidParameter": {
+        "name": "ssid",
+        "example": "Astrogate_5G",
+        "in": "query",
+        "required": true,
+        "description": "Use ssid name",
         "schema": {
           "type": "string"
         }
@@ -4074,6 +4228,11 @@
         "description": "The API Key for issuing a RESTful API request.",
         "in": "header",
         "name": "X-API-KEY"
+      },
+      "BasicAuth": {
+        "description": "Basic HTTP security authentication. Allowed headers: 'Authorization: Basic <api_key>' or 'Authorization: Basic XXXXXX', where XXXXX is the base64 encoded string of username:password.",
+        "type": "http",
+        "scheme": "basic"
       }
     }
   },
