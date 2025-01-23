@@ -3,16 +3,7 @@
   "info": {
     "version": "2.0.1",
     "title": "ATEN Wireless Presentation RESTful API",
-    "description": "The API for ATEN Wireless Presentation",
-    "contact": {
-      "name": "System Developer",
-      "email": "systemdeveloper@astrogate.com",
-      "url": "https://www.astrogate.com"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
-    }
+    "description": "The API for ATEN Wireless Presentation"
   },
   "servers": [
     {
@@ -3473,6 +3464,11 @@
         "description": "The API Key for issuing a RESTful API request.",
         "in": "header",
         "name": "X-API-KEY"
+      },
+      "BasicAuth": {
+        "description": "Basic HTTP security authentication. Allowed headers: 'Authorization: Basic <api_key>' or 'Authorization: Basic XXXXXX', where XXXXX is the base64 encoded string of username:password.",
+        "type": "http",
+        "scheme": "basic"
       }
     }
   },
